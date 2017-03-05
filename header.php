@@ -8,7 +8,7 @@ if (!empty($this->options->next_cdn) && $this->options->next_cdn) {
     define('__TYPECHO_THEME_URL__', Typecho_Common::url(__TYPECHO_THEME_DIR__ . '/NexTPisces', $this->options->next_cdn));
 }
 ?><!doctype html>
-<html class="theme-next use-motion pisces" lang="zh-cmn-Hans">
+<html class="theme-next use-motion pisces" lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">

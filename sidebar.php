@@ -64,26 +64,6 @@ Typecho_Widget::widget('Widget_Stat')->to($stat);
                 </div>
             <?php endif; ?>
             <div class="links-of-author motion-element">
-  <span class="links-of-author-item">
-    <a href="https://github.com/example" target="_blank">
-        <i class="fa fa-github"></i> GitHub
-    </a>
-  </span>
-  <span class="links-of-author-item">
-    <a href="http://www.zhihu.com/people/example" target="_blank">
-        <i class="fa fa-globe"></i> 知乎
-    </a>
-  </span>
-  <span class="links-of-author-item">
-    <a href="http://v2ex.com/member/example" target="_blank">
-        <i class="fa fa-globe"></i> V2EX
-    </a>
-  </span>
-  <span class="links-of-author-item">
-    <a href="http://segmentfault.com/u/example" target="_blank">
-        <i class="fa fa-globe"></i> SF
-    </a>
-  </span>
             </div>
             <?php if (class_exists("Links_Plugin")): ?>
                 <div class="motion-element" <?php
@@ -105,4 +85,23 @@ Typecho_Widget::widget('Widget_Stat')->to($stat);
         <?php endif; ?>
     </div>
 </aside>
+<script>
+window.NEXT_CONFIG_LINKS = <?php trim($this->options->next_links()); ?>;
+(function(){
+    function getSpanModle(obj){
+        if(!obj){return ""}
+        var modle = "<span class=\"links-of-author-item\"><a href=\"" + obj.link + "\" target=\"_blank\"><i class=\"fa " + obj.icon + "\"></i> " + obj.title + "</a></span>";
+        return modle;
+    }
+    function buildMultiLinks(array){
+        if(!array.length){return};
+        var spans = '';
+        for(var i = 0; i < array.length; i++){
+            spans += getSpanModle(array[i]);
+        }
+        $(spans).appendTo(".links-of-author.motion-element");
+    }
+    buildMultiLinks(window.NEXT_CONFIG_LINKS);
+})();
+</script>
 

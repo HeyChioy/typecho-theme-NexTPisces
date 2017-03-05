@@ -19,6 +19,16 @@ function themeConfig($form)
     $next_tips = new Typecho_Widget_Helper_Form_Element_Text('next_tips', NULL, '一个高端大气上档次的网站', _t('站点描述'), _t('将显示在侧边栏的昵称下方'));
     $form->addInput($next_tips);
 
+
+    $example = '
+    [
+        {title:"Github",icon:"fa-github",link:"http://github.com/HeyChioy"},
+        {title:"云音乐",icon:"fa-music",link:"http://music.163.com/#/user/home?id=63918846"}
+    ]';
+    $icon_url = '<a href="http://9iphp.com/fa-icons" target="__blank">FontAwesome 4.7.0 中完整的675个图标样式CSS参考</a>';
+    $next_links = new Typecho_Widget_Helper_Form_Element_Textarea('next_links', NULL, $example, _t('链接'), _t('格式：[{title:"",icon:"",link:""}]，'.$icon_url));
+    $form->addInput($next_links);
+
     $next_cdn = new Typecho_Widget_Helper_Form_Element_Text('next_cdn', NULL, $siteUrl, _t('cdn镜像地址'), _t('静态文件cdn镜像加速地址，加速js和css，如七牛，又拍云等<br>格式参考：' . $siteUrl . '<br>不用请留空或者保持默认'));
     $form->addInput($next_cdn);
 
