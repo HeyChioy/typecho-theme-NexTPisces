@@ -18,3 +18,9 @@ Hexo主题[NexT.Pisces](https://github.com/iissnan/hexo-theme-next)的Typecho移
 ## 注意事项
 
 - 侧边栏友链只有在安装了 [Hanny](http://www.imhan.com/) 的 [Links插件](http://www.imhan.com/tag/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/) 才可显示，未安装不影响使用
+
+## 修改内容
+
+- 修改主题选项菜单，添加自定义链接配置
+
+![](screenshot-option.png)
