@@ -99,7 +99,7 @@ window.NEXT_CONFIG_LINKS = <?php trim($this->options->next_links()); ?>;
         for(var i = 0; i < array.length; i++){
             spans += getSpanModle(array[i]);
         }
-        $(spans).appendTo(".links-of-author.motion-element");
+        document.querySelector(".links-of-author.motion-element").innerHTML = spans;
     }
     buildMultiLinks(window.NEXT_CONFIG_LINKS);
 })();
