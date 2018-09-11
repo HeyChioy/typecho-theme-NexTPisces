@@ -12,9 +12,9 @@ function themeConfig($form)
     $next_name->input->setAttribute('class', 'w-100 mono');
     $form->addInput($next_name);
 
-    $next_gravatar = new Typecho_Widget_Helper_Form_Element_Text('next_gravatar', NULL, '', _t('侧边栏头像'), _t('填写Gravatar头像的邮箱地址'));
+    $next_gravatar = new Typecho_Widget_Helper_Form_Element_Text('next_gravatar', NULL, '', _t('侧边栏头像'), _t('填写头像的图片地址'));
     $next_gravatar->input->setAttribute('class', 'w-100 mono');
-    $form->addInput($next_gravatar->addRule('email', '请填写一个邮箱地址'));
+    $form->addInput($next_gravatar);
 
     $next_tips = new Typecho_Widget_Helper_Form_Element_Text('next_tips', NULL, '一个高端大气上档次的网站', _t('站点描述'), _t('将显示在侧边栏的昵称下方'));
     $form->addInput($next_tips);
@@ -61,9 +61,7 @@ function themeConfig($form)
 
 function getGravatar($email, $s = 40, $d = 'mm', $g = 'g')
 {
-    $hash = md5($email);
-    $avatar = "http://gravatar.duoshuo.com/avatar/$hash?s=$s&d=$d&r=$g";
-    return $avatar;
+    return $email;
 }
 
 function getTagCount()
